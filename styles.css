@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: radial-gradient(circle, #0a0f1a, #000);
+  color: #00ffee;
+  font-family: 'Orbitron', sans-serif;
+  overflow-x: hidden;
+}
+
+.notebook-header {
+  background: #111;
+  border-bottom: 2px solid #00ffee;
+  padding: 2em;
+  text-align: center;
+  box-shadow: 0 0 15px #00ffee;
+}
+
+.notebook-header h1 {
+  font-size: 2.5em;
+}
+
+.notebook-header h2 {
+  font-weight: 400;
+  margin-top: 0.5em;
+  color: #ccc;
+}
+
+nav ul {
+  list-style: none;
+  margin-top: 1em;
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+}
+
+nav a {
+  color: #00ffee;
+  text-decoration: none;
+  font-size: 1.1em;
+}
+
+.about-section,
+.projects-section {
+  padding: 4em 2em;
+  text-align: center;
+}
+
+.animation-container {
+  width: 200px;
+  height: 200px;
+  perspective: 800px;
+  margin: 0 auto 80px auto; /* centraliza e adiciona margem abaixo */
+}
+
+.scene-light {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, #00ffee55 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  filter: blur(40px);
+}
+
+.cube {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  animation: spin 15s linear infinite;
+  z-index: 1;
+}
+
+.cube-face {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  background: linear-gradient(135deg, #001c1c, #003333);
+  border: 2px solid #00ffee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #00ffee;
+  box-shadow: inset 0 0 20px #00ffee22, 0 0 15px #00ffee44;
+}
+
+.front  { transform: rotateY(0deg) translateZ(125px); }
+.back   { transform: rotateY(180deg) translateZ(125px); }
+.right  { transform: rotateY(90deg) translateZ(125px); }
+.left   { transform: rotateY(-90deg) translateZ(125px); }
+.top    { transform: rotateX(90deg) translateZ(125px); }
+.bottom { transform: rotateX(-90deg) translateZ(125px); }
+
+@keyframes spin {
+  0% { transform: rotateX(0) rotateY(0); }
+  100% { transform: rotateX(360deg) rotateY(360deg); }
+}
+
+.rover-carousel {
+  display: flex;
+  gap: 2em;
+  padding: 2em 0;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.rover-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid cyan;
+  border-radius: 10px;
+  min-width: 250px;
+  max-width: 300px;
+  box-shadow: 0 0 15px #00ffcc88;
+  padding: 1em;
+  flex-shrink: 0;
+}
+
+.rover-image {
+  width: 100%;
+  height: 150px;
+  background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/NASA_Mars_Rover.jpg/640px-NASA_Mars_Rover.jpg') center/cover no-repeat;
+  border-radius: 8px;
+  margin-bottom: 1em;
+}
+
+.contatos {
+  background-color: #0a0f1a;
+  padding: 40px 20px;
+  text-align: center;
+  color: #00ffee;
+  border-top: 2px solid #00ffee33;
+}
+
+.contatos h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.contato-info p {
+  font-size: 1.1rem;
+  margin: 10px 0;
+}
+
+.contato-info a {
+  color: #00ffee;
+  text-decoration: none;
+}
+
+.contato-info a:hover {
+  text-decoration: underline;
+}
+
+.detalhes {
+  margin-top: 30px;
+  font-size: 0.9rem;
+  color: #00ffeeaa;
+}
+
+.detalhes p {
+  margin: 5px 0;
+}
